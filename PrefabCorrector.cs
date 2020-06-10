@@ -18,7 +18,7 @@ public class PrefabCorrector : MonoBehaviour
             Object _prefab = PrefabUtility.InstantiatePrefab(prefab as GameObject);
             GameObject goPrefab = _prefab as GameObject;
             
-            // Get all transform values of existing object and set it to instanced prefeb.
+            // Get all transform values of existing object and set it to instanced prefab.
             goPrefab.transform.parent = go.transform.parent;
             goPrefab.transform.position = _transformData.position;
             goPrefab.transform.rotation = _transformData.rotation;
