@@ -13,14 +13,18 @@ public class PrefabCorrector : MonoBehaviour
     {
         foreach (GameObject go in objectList)
         {
-            Debug.Log("za");
             Transform _transformData = go.transform;
+            
             Object _prefab = PrefabUtility.InstantiatePrefab(prefab as GameObject);
             GameObject goPrefab = _prefab as GameObject;
+            
+            // Get all transform values of existing object and set it to instanced prefeb.
             goPrefab.transform.parent = go.transform.parent;
             goPrefab.transform.position = _transformData.position;
             goPrefab.transform.rotation = _transformData.rotation;
             goPrefab.transform.localScale = _transformData.localScale;
+            
+            // Remove old object.
             DestroyImmediate(go);
             _prefab.name = prefab.name;
         }
