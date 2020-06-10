@@ -11,6 +11,7 @@ public class PrefabCorrector : MonoBehaviour
 
    public void CorrectPrefabs()
     {
+        // Iterate every selected gameobject in hierarchy.
         foreach (GameObject go in objectList)
         {
             Transform _transformData = go.transform;
